@@ -9,6 +9,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'thinca/vim-quickrun'
+Plug 'vim-scripts/javacomplete'
+Plug 'kien/ctrlp.vim'
 call plug#end()
 
 filetype plugin indent on
@@ -65,4 +67,8 @@ let g:vim_markdown_folding_disabled=1
 au BufRead,BufNewFile *.md set filetype=markdown
 let g:previm_show_header = 0
 "let g:previm_custom_css_path = '~/workspace/tmp/mycss.css'
+
+" Java Complete
+autocmd FileType java :setlocal omnifunc=javacomplete#Complete
+autocmd FileType java :setlocal completefunc=javacomplete#CompleteParamsInfo
 
