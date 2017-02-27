@@ -39,6 +39,10 @@ set expandtab
 set tabstop=4
 set smarttab
 
+if exists('&ambiwidth')
+	set ambiwidth=double
+endif
+
 set clipboard=unnamed
 
 inoremap <C-j> <Down>
