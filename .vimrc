@@ -9,7 +9,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'thinca/vim-quickrun'
-Plug 'vim-scripts/javacomplete'
+Plug 'artur-shaik/vim-javacomplete2'
 Plug 'kien/ctrlp.vim'
 call plug#end()
 
@@ -45,6 +45,10 @@ endif
 
 set clipboard=unnamed
 
+let mapleader = "\<Space>"
+nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>w :w<CR>
+
 inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
@@ -74,5 +78,9 @@ let g:previm_show_header = 0
 
 " Java Complete
 autocmd FileType java :setlocal omnifunc=javacomplete#Complete
-autocmd FileType java :setlocal completefunc=javacomplete#CompleteParamsInfo
+nmap <leader>jI <Plug>(JavaComplete-Imports-AddMissing)
+nmap <leader>jR <Plug>(JavaComplete-Imports-RemoveUnused)
+nmap <leader>ji <Plug>(JavaComplete-Imports-AddSmart)
+nmap <leader>jii <Plug>(JavaComplete-Imports-Add)
+nmap <Leader>jis <Plug>(JavaComplete-Imports-SortImports)
 
