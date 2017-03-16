@@ -47,6 +47,7 @@ set clipboard=unnamed
 
 let mapleader = "\<Space>"
 nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>O :Explore<CR>
 nnoremap <Leader>w :w<CR>
 
 inoremap <C-j> <Down>
