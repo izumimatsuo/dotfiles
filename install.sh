@@ -1,13 +1,15 @@
 #!/bin/sh
 
+if [ `uname` = "Windows_NT" ]; then
+    cmd="cp"
+else
+    cmd="ln -sfv"
+fi
+
 for f in .??*
 do
     [ $f = ".git" ] && continue
 
-    if [ `uname` = "Windows_NT" ]; then
-        cp ~/dotfiles/$f ~/$f
-        continue
-    fi
-
-    ln -sfv ~/dotfiles/$f ~/$f
+    script="$cmd ~/dotfiles/$f ~/$f"
+    eval $script
 done
