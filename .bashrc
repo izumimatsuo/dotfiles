@@ -1,5 +1,8 @@
 # .bashrc
 
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+
 alias vi='vim'
 alias ls='ls -al'
 alias up='cd ..; ls'
