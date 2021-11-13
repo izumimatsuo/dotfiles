@@ -4,6 +4,8 @@ if has("vim_starting")
 endif
 
 call plug#begin('~/.vim/plugins')
+Plug 'junegunn/vim-plug',
+      \ {'dir': '~/.vim/plugins/vim-plug/autoload'}
 Plug 'aklt/plantuml-syntax'
 Plug 'plasticboy/vim-markdown'
 Plug 'kannokanno/previm'
@@ -11,6 +13,7 @@ Plug 'tyru/open-browser.vim'
 Plug 'thinca/vim-quickrun'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'kien/ctrlp.vim'
+Plug 'vim-skk/skk.vim'
 call plug#end()
 
 filetype plugin indent on
@@ -85,3 +88,9 @@ nmap <leader>ji <Plug>(JavaComplete-Imports-AddSmart)
 nmap <leader>jii <Plug>(JavaComplete-Imports-Add)
 nmap <Leader>jis <Plug>(JavaComplete-Imports-SortImports)
 
+" skk
+if !filereadable(expand('~/.config/skk/SKK-JISYO.L'))
+  call mkdir(expand('~/.config/skk', 'p'))
+  call system('cd ~/.config/skk/ && wget http://openlab.jp/skk/dic/SKK-JISYO.L.gz && gzip -d SKK-JISYO.L.gz')
+endif
+let skk_large_jisyo='~/.config/skk/SKK-JISYO.L'
