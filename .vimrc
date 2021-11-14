@@ -94,7 +94,7 @@ nmap <Leader>jis <Plug>(JavaComplete-Imports-SortImports)
 " skk
 if !filereadable($HOME . '/.config/skk/SKK-JISYO.L')
   call mkdir($HOME . '/.config/skk', 'p')
-  call system('cd ~/.config/skk/ && wget http://openlab.jp/skk/dic/SKK-JISYO.L.gz && gzip -d SKK-JISYO.L.gz')
+  call system('cd ~/.config/skk/ && wget https://skk-dev.github.io/dict/SKK-JISYO.L.gz && gzip -d SKK-JISYO.L.gz')
 endif
 let skk_large_jisyo='~/.config/skk/SKK-JISYO.L'
 let skk_auto_save_jisyo = 1
