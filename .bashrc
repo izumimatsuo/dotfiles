@@ -4,7 +4,7 @@ export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
 alias vi='vim'
-alias ls='ls -al'
+alias ls='ls -l'
 alias up='cd ..; ls'
 
 #tmux
