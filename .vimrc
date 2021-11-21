@@ -100,3 +100,5 @@ if !filereadable($HOME . '/.config/skk/SKK-JISYO.L')
 endif
 let skk_large_jisyo='~/.config/skk/SKK-JISYO.L'
 let skk_auto_save_jisyo = 1
+
+runtime! config/*.vim
