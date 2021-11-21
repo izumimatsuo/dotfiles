@@ -11,9 +11,11 @@ Plug 'plasticboy/vim-markdown'
 Plug 'kannokanno/previm'
 Plug 'tyru/open-browser.vim'
 Plug 'thinca/vim-quickrun'
-Plug 'artur-shaik/vim-javacomplete2'
+"Plug 'artur-shaik/vim-javacomplete2'
 Plug 'kien/ctrlp.vim'
 Plug 'vim-skk/skk.vim'
+Plug 'mattn/webapi-vim'
+Plug 'mattn/vim-gist'
 call plug#end()
 
 filetype plugin indent on
@@ -91,6 +93,12 @@ nmap <Leader>jis <Plug>(JavaComplete-Imports-SortImports)
 " skk
 if !filereadable(expand('~/.config/skk/SKK-JISYO.L'))
   call mkdir(expand('~/.config/skk', 'p'))
-  call system('cd ~/.config/skk/ && wget http://openlab.jp/skk/dic/SKK-JISYO.L.gz && gzip -d SKK-JISYO.L.gz')
+  call system('cd ~/.config/skk/ && wget https://skk-dev.github.io/dict/SKK-JISYO.L.gz && gzip -d SKK-JISYO.L.gz')
 endif
 let skk_large_jisyo='~/.config/skk/SKK-JISYO.L'
+let skk_auto_save_jisyo = 1
+
+" gist
+let g:gist_detect_filetype = 1
+let g:github_user  = 'izumimatsuo'
+let g:gist_token = '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'
