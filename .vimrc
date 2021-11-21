@@ -100,8 +100,3 @@ if !filereadable($HOME . '/.config/skk/SKK-JISYO.L')
 endif
 let skk_large_jisyo='~/.config/skk/SKK-JISYO.L'
 let skk_auto_save_jisyo = 1
-
-" gist
-let g:gist_detect_filetype = 1
-let g:github_user  = 'izumimatsuo'
-let g:gist_token = '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'
