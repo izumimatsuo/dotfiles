@@ -3,9 +3,12 @@ if has("vim_starting")
   set runtimepath^=~/.vim
 endif
 
+if !filereadable($HOME . '/.vim/autoload/plug.vim')
+  call mkdir($HOME . '/.vim/autoload', 'p')
+  call system("cd ~/.vim/autoload && wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim")
+endif
+
 call plug#begin('~/.vim/plugins')
-Plug 'junegunn/vim-plug',
-      \ {'dir': '~/.vim/plugins/vim-plug/autoload'}
 Plug 'aklt/plantuml-syntax'
 Plug 'plasticboy/vim-markdown'
 Plug 'kannokanno/previm'
@@ -91,8 +94,8 @@ nmap <leader>jii <Plug>(JavaComplete-Imports-Add)
 nmap <Leader>jis <Plug>(JavaComplete-Imports-SortImports)
 
 " skk
-if !filereadable(expand('~/.config/skk/SKK-JISYO.L'))
-  call mkdir(expand('~/.config/skk', 'p'))
+if !filereadable($HOME . '/.config/skk/SKK-JISYO.L')
+  call mkdir($HOME . '/.config/skk', 'p')
   call system('cd ~/.config/skk/ && wget https://skk-dev.github.io/dict/SKK-JISYO.L.gz && gzip -d SKK-JISYO.L.gz')
 endif
 let skk_large_jisyo='~/.config/skk/SKK-JISYO.L'
